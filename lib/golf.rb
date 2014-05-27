@@ -11,6 +11,18 @@ class Golf
   def self.hole3(i)
     (1..i).inject &:*
   end
+
+  def self.hole4 i
+    i.map do |j|
+      if j.start_with? "man"
+        "hat("<<j<<")"
+      elsif j.start_with? "dog"
+        j[0..-2]<<"(bone"<<"))"
+      elsif j.start_with? "cat"
+        j.sub! "cat", "dead"
+      end
+    end
+  end
   
   def self.hole5 a
     x = []
@@ -23,18 +35,6 @@ class Golf
     end
     x << a
     x.uniq.sort_by {|m| [m.length, m]}
-  end
-
-  def self.hole4 i
-    i.map do |j|
-      if j.start_with? "man"
-        "hat("<<j<<")"
-      elsif j.start_with? "dog"
-        j[0..-2]<<"(bone"<<"))"
-      elsif j.start_with? "cat"
-        j.sub! "cat", "dead"
-      end
-    end
   end
 
   def self.hole6(i)
