@@ -1,7 +1,9 @@
 class Golf
-
-  def self.hole3(i)
-    (1..i).inject { |i,x| i*x }
+  def self.hole1 x
+    x.reduce(&:*)
   end
 
+  def self.hole3(i)
+    (1..i).inject &:*
+  end
 end
