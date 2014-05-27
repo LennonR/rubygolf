@@ -12,6 +12,18 @@ class Golf
     (1..i).inject &:*
   end
 
+  def self.hole4 i
+    i.map do |j|
+      if j.start_with? "man"
+        "hat("<<j<<")"
+      elsif j.start_with? "dog"
+        j[0..-2]<<"(bone"<<"))"
+      elsif j.start_with? "cat"
+        j.sub! "cat", "dead"
+      end
+    end
+  end
+
   def self.hole6(i)
     (1..i).collect do |i|
       if i % 15 == 0
