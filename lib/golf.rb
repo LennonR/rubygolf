@@ -25,4 +25,10 @@ class Golf
       end
     end
   end
+
+  def self.hole9(s)
+    s.split(" ").map do |w|
+      w.length < 11 ? w : w[0..3] + "..." + w[-3..-1]
+    end.join(" ")
+  end
 end
