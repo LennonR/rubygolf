@@ -50,6 +50,12 @@ class Golf
       end
     end
   end
+  
+  def self.hole8 n
+    x = [1,1]
+    (n-2).times {x << (x[-1] + x[-2])}
+    x
+  end
 
   def self.hole9(s)
     s.split(" ").map do |w|
