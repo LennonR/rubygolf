@@ -23,7 +23,7 @@ class Golf
       end
     end
   end
-  
+
   def self.hole5 a
     x = []
     a.each do |i|
@@ -37,7 +37,7 @@ class Golf
     x.uniq.sort_by {|m| [m.length, m]}
   end
 
-  def self.hole6(i)
+  def self.hole6 i
     (1..i).collect do |i|
       if i % 15 == 0
         "fizzbuzz"
@@ -50,7 +50,7 @@ class Golf
       end
     end
   end
-  
+
   def self.hole8 n
     x = [1,1]
     (n-2).times {x << (x[-1] + x[-2])}
