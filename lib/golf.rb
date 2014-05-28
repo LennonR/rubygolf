@@ -54,22 +54,19 @@ class Golf
   def self.hole7 a
     r=[]
     s=[]
-    # when to return
-    done=true
+    d=true
     a.each_with_index do |n,i|
-      # if the last one is one less than n
       if (a[i+1] == n+1) || i ==0 || (i == (a.length - 1) && a[-1] == a[-2] + 1)
         s << n
-        done=false
-      elsif
+        d=false
+      else
         s << n
-        done = true
+        d = true
       end
-      # push
-      if (done && s.length==1) || ((a.length - 1) == i && s.length == 1)
+      if (d && s.length==1) || ((a.length - 1) == i && s.length == 1)
         r << n.to_s
         s = []
-      elsif done && s.length>1 || (a.length - 1) == i
+      elsif d && s.length>1 || (a.length - 1) == i
         r << "#{s[0]}-#{s[-1]}"
         s = []
       end
