@@ -1,7 +1,7 @@
 class Golf
 
   def self.hole1 x
-    x.reduce(&:*)
+    x.reduce &:*
   end
 
   def self.hole2
@@ -38,7 +38,7 @@ class Golf
   end
 
   def self.hole6 i
-    (1..i).collect do |i|
+    (1..i).map do |i|
       if i % 15 == 0
         "fizzbuzz"
       elsif i % 3 == 0
