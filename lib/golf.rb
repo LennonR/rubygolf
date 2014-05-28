@@ -1,7 +1,7 @@
 class Golf
 
   def self.hole1 x
-    x.reduce(&:*)
+    x.reduce &:*
   end
 
   def self.hole2
@@ -37,8 +37,8 @@ class Golf
     x.uniq.sort_by {|m| [m.length, m]}
   end
 
-  def self.hole6(i)
-    (1..i).collect do |i|
+  def self.hole6 i
+    (1..i).map do |i|
       if i % 15 == 0
         "fizzbuzz"
       elsif i % 3 == 0
@@ -75,6 +75,12 @@ class Golf
       end
     end
     r
+  end
+
+  def self.hole8 n
+    x = [1,1]
+    (n-2).times {x << (x[-1] + x[-2])}
+    x
   end
 
   def self.hole9(s)
