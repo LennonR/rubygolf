@@ -23,7 +23,7 @@ class Golf
       end
     end
   end
-  
+
   def self.hole5 a
     x = []
     a.each do |i|
@@ -49,6 +49,30 @@ class Golf
         i
       end
     end
+  end
+
+  def self.hole7 a
+    r=[]
+    s=[]
+    # when to return
+    done=true
+    a.each_with_index do |n,i|
+      # if the last one is one less than n
+      if i ==0 || (a[i-1] == n-1)
+        s << n
+        done=false
+      elsif
+        done = true
+      end
+      # push
+      if (done && s.length==1) || ((a.length - 1) == i && s.length == 1)
+        r << n.to_s
+      elsif done && s.length>1 || (a.length - 1) == i
+        r << "#{s[0]}-#{s[-1]}"
+        s = [n]
+      end
+    end
+    r
   end
 
   def self.hole9(s)
